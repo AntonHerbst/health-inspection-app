@@ -154,19 +154,20 @@ function reverseGeocode(lat, lng) {
     });
 }
 
-// Mock Google Sign-In
+// Custom User Sign-In
 googleSignInBtn.addEventListener('click', () => {
-    // In a real app, this would use Google OAuth
-    const mockUser = {
-        name: "John Doe",
-        email: "john@example.com"
+    const realUser = {
+        name: "Anton Herbst",  // Replace with your name
+        email: "your.email@example.com",  // Replace with your email
+        lastLogin: new Date().toISOString(),
+        role: "inspector"  // Add any custom fields
     };
     
     // Store user data
-    localStorage.setItem('currentUser', JSON.stringify(mockUser));
+    localStorage.setItem('currentUser', JSON.stringify(realUser));
     
     // Update UI
-    userName.textContent = mockUser.name;
+    userName.textContent = realUser.name;
     
     // Switch to dashboard
     loginScreen.classList.add('hidden');
@@ -175,6 +176,8 @@ googleSignInBtn.addEventListener('click', () => {
     
     // Load inspections
     renderInspections();
+    
+    console.log("User logged in:", realUser.email);
 });
 
 // Render inspection cards
