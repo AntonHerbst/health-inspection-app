@@ -1,0 +1,123 @@
+/* Base styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Screen transitions */
+.screen-transition {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Findings styles */
+.finding-entry {
+    transition: all 0.2s ease;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.finding-entry:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+.photo-upload {
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 2px dashed #d1d5db;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.photo-upload:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+}
+
+.delete-finding {
+    cursor: pointer;
+    transition: all 0.2s;
+    background: none;
+    border: none;
+    padding: 0.25rem;
+}
+
+.delete-finding:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+.photo-preview {
+    margin-top: 0.5rem;
+}
+
+.photo-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 0.25rem;
+    border: 1px solid #e5e7eb;
+}
+
+#add-finding-btn {
+    transition: all 0.2s;
+    margin: 1rem 0;
+}
+
+#add-finding-btn:hover {
+    background-color: #e5e7eb;
+}
+
+/* Inspection card styles */
+.inspection-card {
+    transition: all 0.2s ease;
+}
+
+.inspection-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Conformance radio buttons */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 50%;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked {
+    border-color: currentColor;
+    background-color: currentColor;
+    background-clip: content-box;
+    padding: 2px;
+}
+
+input[type="radio"][value="conformance"]:checked {
+    color: #3b82f6; /* blue-500 */
+}
+
+input[type="radio"][value="non-conformance"]:checked {
+    color: #ef4444; /* red-500 */
+}
+
+/* Mobile responsiveness */
+@media (min-width: 640px) {
+    #app {
+        max-width: 480px;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+}
